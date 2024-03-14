@@ -1,0 +1,78 @@
+﻿@model EvidencePojistencu1.Models.InsuredPerson
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>InsuredPerson</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.InsuredPersonId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<div>
+    <a asp-controller="Insurances" asp-action="Create" asp-route-insuredPersonId="@Model?.InsuredPersonId" class="btn btn-primary">Create Insurance</a>
+</div>
+<div>
+    <h4>Insurances</h4>
+    <hr />
+    @if (Model.Insurances != null && Model.Insurances.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Insurance Type</th>
+                    <th>Premium Amount</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var insurance in Model.Insurances)
+                {
+                    <tr>
+                        <td>@insurance.InsuranceType</td>
+                        <td>@insurance.PremiumAmount</td>
+                        <td>@insurance.StartDate.ToShortDateString()</td>
+                        <td>@insurance.EndDate.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No insurances found for this insured person.</p>
+    }
+</div>

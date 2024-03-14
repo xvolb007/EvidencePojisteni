@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EvidencePojistencu1.props" />
+</Project>
