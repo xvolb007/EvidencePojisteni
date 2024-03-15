@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EvidencePojistencu1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24ec24c5dfa65e5579aa018406b5b1f19e03b1f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76c4a5dc4bec96251f33a859a319f167f6d89b6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("EvidencePojistencu1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EvidencePojistencu1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

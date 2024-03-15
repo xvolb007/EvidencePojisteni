@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EvidencePojistencu1.Data;
 using EvidencePojistencu1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EvidencePojistencu1.Controllers
 {
+    [Authorize(Roles = UserRole.Admin)]
     public class InsurancesController : Controller
     {
         private readonly ApplicationDbContext _context;
