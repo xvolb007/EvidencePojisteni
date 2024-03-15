@@ -1,48 +1,61 @@
 ﻿@model EvidencePojistencu1.Models.Insurance
 
-@{
-    ViewData["Title"] = "Details";
-}
 
-<h1>Details</h1>
+<h1>Nahled do Pojisteni</h1>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.InsuranceType)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.InsuranceType)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PremiumAmount)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PremiumAmount)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.StartDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EndDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EndDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.InsuredPerson.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.InsuredPerson.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.InsuredPerson.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.InsuredPerson.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.InsuredPerson.PhoneNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.InsuredPerson.PhoneNumber)
+            </dd>
+        </dl>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model?.InsuranceId">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
 
-<div>
-    <h4>Insurance</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.InsuranceType)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.InsuranceType)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PremiumAmount)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PremiumAmount)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.InsuredPerson)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.InsuredPerson.Address)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.InsuranceId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+ 

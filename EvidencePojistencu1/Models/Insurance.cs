@@ -7,19 +7,23 @@ namespace EvidencePojistencu1.Models
         public int InsuranceId { get; set; }
 
         [Required(ErrorMessage = "Typ pojištění je povinný.")]
+        [Display(Name = "Typ pojistneho", Prompt = "Napis sem typ pojistneho")]
         public string InsuranceType { get; set; }
 
         [Required(ErrorMessage = "Výše pojistného je povinná.")]
         [Range(0, int.MaxValue, ErrorMessage = "Výše pojistného musí být kladné číslo.")]
+        [Display(Name = "Vyse Pojisteni", Prompt = "Napis sem vysi pojistneho")]
         public int PremiumAmount { get; set; }
 
         [Required(ErrorMessage = "Datum začátku je povinné.")]
         [DataType(DataType.Date)]
+        [Display(Name = "Zacatek")]
         public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "Datum konce je povinné.")]
         [DataType(DataType.Date)]
         [DateGreaterThan("StartDate", ErrorMessage = "Datum konce musí být později než datum začátku.")]
+        [Display(Name = "Konec")]
         public DateTime EndDate { get; set; }
 
         // Cizí klíč pro identifikaci pojištěné osoby

@@ -1,15 +1,8 @@
 ﻿@model EvidencePojistencu1.Models.Insurance
 
-@{
-    ViewData["Title"] = "Create";
-}
-
-<h1>Create</h1>
-
-<h4>Insurance</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-2"></div>
+    <div class="col-8">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -36,16 +29,20 @@
                 <label asp-for="InsuredPersonId" class="control-label"></label>
                 <input type="int" id="InsuredPersonId" name="InsuredPersonId" value="@ViewData["InsuredPersonId"]" class="form-control" readonly />
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
+    <div class="col-2"></div>
+</div>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8 mt-3">
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{

@@ -101,7 +101,7 @@ namespace EvidencePojistencu1.Controllers
             {
                 return NotFound();
             }
-            ViewData["InsuredPersonId"] = new SelectList(_context.Set<InsuredPerson>(), "InsuredPersonId", "Address", insurance.InsuredPersonId);
+            ViewData["InsuredPersonId"] = new SelectList(_context.Set<InsuredPerson>(), "InsuredPersonId", "InsuredPersonId", insurance.InsuredPersonId);
             return View(insurance);
         }
 
@@ -137,7 +137,7 @@ namespace EvidencePojistencu1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["InsuredPersonId"] = new SelectList(_context.Set<InsuredPerson>(), "InsuredPersonId", "Address", insurance.InsuredPersonId);
+            ViewData["InsuredPersonId"] = new SelectList(_context.Set<InsuredPerson>(), "InsuredPersonId", "InsuredPersonId", insurance.InsuredPersonId);
             return View(insurance);
         }
 

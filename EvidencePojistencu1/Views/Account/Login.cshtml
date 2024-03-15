@@ -1,0 +1,55 @@
+﻿@model LoginVM
+
+<div class="container-fluid bg-light">
+    <div class="row">
+            <div class= "col-2">
+                
+            </div>
+            <div class="col-4">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-body">
+                    <h4 class="card-title">
+                        Přihlášení
+                    </h4>
+                        <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                <form class="d-flex flex-column gap-2" asp-route-returnUrl="@ViewData["ReturnUrl"]">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="Email" class="form-label"></label>
+                                        <input asp-for="Email" class="form-control" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label asp-for="Password" class="form-label"></label>
+                                        <input asp-for="Password" class="form-control" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-check">
+                                        <input asp-for="RememberMe" class="form-check-input">
+                                        <label asp-for="RememberMe" class="form-check-label"></label>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Přihlásit se</button>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+        <div class="col-6 mt-3 " >
+            <p>Vítejte na našem webu! Zaregistrujte se a začněte objevovat všechny naše funkce.</p>
+            <p>Pro registraci vyuzijte</p>
+            <a asp-action="Register" asp-route-returnUrl="@ViewData["ReturnUrl"]" class="btn btn-link">Registrace</a>
+        </div>
+    </div>
+
+</div>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
