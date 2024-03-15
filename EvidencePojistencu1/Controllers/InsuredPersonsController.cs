@@ -34,7 +34,7 @@ namespace EvidencePojistencu1.Controllers
             }
 
             var insuredPerson = await _context.InsuredPerson
-        .Include(u => u.Insurances) // Включаем загрузку связанных полисов
+        .Include(u => u.Insurances) // insurances loading
         .FirstOrDefaultAsync(m => m.InsuredPersonId == id);
             if (insuredPerson == null)
             {

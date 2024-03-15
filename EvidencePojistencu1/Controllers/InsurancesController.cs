@@ -70,21 +70,17 @@ namespace EvidencePojistencu1.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(insurance); // Добавляем новый полис в контекст данных
-                await _context.SaveChangesAsync(); // Сохраняем изменения в базе данных
-                // Получаем пользователя по его InsuredPersonId
+                _context.Add(insurance); 
+                await _context.SaveChangesAsync(); 
+                
                 var insuredPerson = await _context.InsuredPerson
-                    .Include(u => u.Insurances) // Включаем загрузку связанных полисов
+                    .Include(u => u.Insurances) // loaded insurances
                     .FirstOrDefaultAsync(u => u.InsuredPersonId == insurance.InsuredPersonId);
                 //var insuredPerson = await _context.InsuredPerson.FirstOrDefaultAsync(p => p.InsuredPersonId == insurance.InsuredPersonId);
 
                 if (insuredPerson != null)
                 {
-                    // Добавляем созданный полис к списку полисов пользователя
-                    // Инициализируем список, если он еще не инициализирован
                     insuredPerson.Insurances.Add(insurance);
-
-                    // Сохраняем изменения в базе данных
                     await _context.SaveChangesAsync();
                 }
 
